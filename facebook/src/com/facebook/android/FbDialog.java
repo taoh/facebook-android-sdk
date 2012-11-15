@@ -53,7 +53,7 @@ public class FbDialog extends Dialog {
 
     private String mUrl;
     private DialogListener mListener;
-    private ProgressDialog mSpinner;
+    //private ProgressDialog mSpinner;
     private ImageView mCrossImage;
     private WebView mWebView;
     private FrameLayout mContent;
@@ -67,9 +67,9 @@ public class FbDialog extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mSpinner = new ProgressDialog(getContext());
-        mSpinner.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        mSpinner.setMessage("Loading...");
+        //mSpinner = new ProgressDialog(getContext());
+        //mSpinner.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //mSpinner.setMessage("Loading...");
         
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         mContent = new FrameLayout(getContext());
@@ -178,13 +178,13 @@ public class FbDialog extends Dialog {
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             Util.logd("Facebook-WebView", "Webview loading URL: " + url);
             super.onPageStarted(view, url, favicon);
-            mSpinner.show();
+            //mSpinner.show();
         }
 
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-            mSpinner.dismiss();
+            //mSpinner.dismiss();
             /* 
              * Once webview is fully loaded, set the mContent background to be transparent
              * and make visible the 'x' image. 
